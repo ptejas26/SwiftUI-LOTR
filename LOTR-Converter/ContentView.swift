@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State var txtLeftTF: String = ""
     @State var txtRightTF: String = ""
+    @State var leftCurrency: Currency = .silverPiece
+    @State var rightCurrency: Currency = .goldPiece
     
     var body: some View {
         ZStack {
@@ -35,12 +37,12 @@ struct ContentView: View {
                         //currency
                         HStack {
                             //currency image
-                            Image("silverpiece")
+                            Image(CurrencyImage.allCases[Currency.allCases.firstIndex(of: leftCurrency) ?? 0].rawValue)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
                             //currency text
-                            Text("Silver Piece")
+                            Text(CurrencyName.allCases[Currency.allCases.firstIndex(of: leftCurrency) ?? 0].rawValue)
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
@@ -62,13 +64,14 @@ struct ContentView: View {
                     VStack {
                         //currency
                         HStack {
+                            
                             //currency image
-                            Image("goldpiece")
+                            Image(CurrencyImage.allCases[Currency.allCases.firstIndex(of: rightCurrency) ?? 0].rawValue)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 33)
                             //currency text
-                            Text("Gold Piece")
+                            Text(CurrencyName.allCases[Currency.allCases.firstIndex(of: rightCurrency) ?? 0].rawValue)
                                 .font(.headline)
                                 .foregroundColor(.white)
                         }
