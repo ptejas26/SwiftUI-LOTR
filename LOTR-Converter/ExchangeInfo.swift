@@ -57,30 +57,13 @@ struct ExchangeInfo: View {
                     }
                     
                     // Third
-                    HStack {
-                        Image("silverpiece")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 30)
-                        Text("1 Silver Piece = 4 Silver Pennies")
-                        Image("silverpenny")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 30)
-                    }
+                    
+                    ExchangeRate(leftImage: "silverpiece", text: "1 Silver Piece = 4 Silver Pennies", rightImage: "silverpenny")
                     
                     // Forth
-                    HStack {
-                        Image("silverpenny")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 30)
-                        Text("1 Silver Penny = 100 Copper Pennies")
-                        Image("copperpenny")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 30)
-                    }
+                    
+                    ExchangeRate(leftImage: "silverpenny", text: "1 Silver Penny = 100 Copper Pennies", rightImage: "copperpenny")
+                    
                     Button {
                         print("Done button Action")
                     } label: {
@@ -91,7 +74,6 @@ struct ExchangeInfo: View {
                     .padding()
                     .background(Color(.systemBrown))
                     .cornerRadius(20)
-                    
                 }
                 
             }

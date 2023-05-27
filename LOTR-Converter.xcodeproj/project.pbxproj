@@ -15,6 +15,7 @@
 		96B1B9C82A21A16B00EFD17D /* LOTR_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9C72A21A16B00EFD17D /* LOTR_ConverterUITests.swift */; };
 		96B1B9CA2A21A16B00EFD17D /* LOTR_ConverterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9C92A21A16B00EFD17D /* LOTR_ConverterUITestsLaunchTests.swift */; };
 		96B1B9D72A21B64E00EFD17D /* ExchangeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9D62A21B64E00EFD17D /* ExchangeInfo.swift */; };
+		96B1B9D92A21BE4200EFD17D /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9D82A21BE4200EFD17D /* ExchangeRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		96B1B9C72A21A16B00EFD17D /* LOTR_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTR_ConverterUITests.swift; sourceTree = "<group>"; };
 		96B1B9C92A21A16B00EFD17D /* LOTR_ConverterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTR_ConverterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		96B1B9D62A21B64E00EFD17D /* ExchangeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInfo.swift; sourceTree = "<group>"; };
+		96B1B9D82A21BE4200EFD17D /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				96B1B9AC2A21A16A00EFD17D /* LOTR_ConverterApp.swift */,
 				96B1B9AE2A21A16A00EFD17D /* ContentView.swift */,
 				96B1B9D62A21B64E00EFD17D /* ExchangeInfo.swift */,
+				96B1B9D82A21BE4200EFD17D /* ExchangeRate.swift */,
 				96B1B9B02A21A16B00EFD17D /* Assets.xcassets */,
 				96B1B9B22A21A16B00EFD17D /* Preview Content */,
 			);
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B1B9D92A21BE4200EFD17D /* ExchangeRate.swift in Sources */,
 				96B1B9D72A21B64E00EFD17D /* ExchangeInfo.swift in Sources */,
 				96B1B9AF2A21A16A00EFD17D /* ContentView.swift in Sources */,
 				96B1B9AD2A21A16A00EFD17D /* LOTR_ConverterApp.swift in Sources */,
