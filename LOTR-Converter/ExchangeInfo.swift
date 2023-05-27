@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ExchangeInfo: View {
     
+    
     @State var descriptionText: String = "AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id"
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         
         ZStack {
@@ -21,11 +24,9 @@ struct ExchangeInfo: View {
                 // Large Text
                 Text("Exchange Rates")
                     .font(.largeTitle)
-                    .foregroundColor(.black)
                 // Text for Description
-                Text("AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id AddInstanceForFactory: No factory registered for id")
+                Text(descriptionText)
                     .font(.body)
-                    .foregroundColor(.black)
                     .padding(.top, -5)
                 // Another VStack
                 VStack {
@@ -57,15 +58,13 @@ struct ExchangeInfo: View {
                     }
                     
                     // Third
-                    
                     ExchangeRate(leftImage: "silverpiece", text: "1 Silver Piece = 4 Silver Pennies", rightImage: "silverpenny")
-                    
                     // Forth
-                    
                     ExchangeRate(leftImage: "silverpenny", text: "1 Silver Penny = 100 Copper Pennies", rightImage: "copperpenny")
                     
                     Button {
-                        print("Done button Action")
+                        print("dismissing this view")
+                        dismiss()
                     } label: {
                         Text("Done")
                             .font(.title)
@@ -77,6 +76,7 @@ struct ExchangeInfo: View {
                 }
                 
             }
+            .foregroundColor(.black)
             .padding()
         }
     }
@@ -85,5 +85,6 @@ struct ExchangeInfo: View {
 struct ExchangeInfo_Previews: PreviewProvider {
     static var previews: some View {
         ExchangeInfo()
+            .preferredColorScheme(.dark)
     }
 }
