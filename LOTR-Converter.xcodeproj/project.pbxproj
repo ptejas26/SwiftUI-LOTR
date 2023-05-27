@@ -19,6 +19,7 @@
 		96B1B9DF2A227AF300EFD17D /* SelectCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9DE2A227AF300EFD17D /* SelectCurrency.swift */; };
 		96B1B9E12A22947300EFD17D /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B1B9E02A22947300EFD17D /* CurrencyIcon.swift */; };
 		96CA5ADF2A22995C00DB6831 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA5ADE2A22995C00DB6831 /* CurrencyModel.swift */; };
+		96CA5AE12A22BE6D00DB6831 /* CurrencyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA5AE02A22BE6D00DB6831 /* CurrencyGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		96B1B9DE2A227AF300EFD17D /* SelectCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrency.swift; sourceTree = "<group>"; };
 		96B1B9E02A22947300EFD17D /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
 		96CA5ADE2A22995C00DB6831 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		96CA5AE02A22BE6D00DB6831 /* CurrencyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				96B1B9AC2A21A16A00EFD17D /* LOTR_ConverterApp.swift */,
+				96CA5AE02A22BE6D00DB6831 /* CurrencyGridView.swift */,
 				96CA5ADE2A22995C00DB6831 /* CurrencyModel.swift */,
 				96B1B9E02A22947300EFD17D /* CurrencyIcon.swift */,
 				96B1B9DE2A227AF300EFD17D /* SelectCurrency.swift */,
@@ -274,6 +277,7 @@
 			files = (
 				96CA5ADF2A22995C00DB6831 /* CurrencyModel.swift in Sources */,
 				96B1B9D92A21BE4200EFD17D /* ExchangeRate.swift in Sources */,
+				96CA5AE12A22BE6D00DB6831 /* CurrencyGridView.swift in Sources */,
 				96B1B9DF2A227AF300EFD17D /* SelectCurrency.swift in Sources */,
 				96B1B9D72A21B64E00EFD17D /* ExchangeInfo.swift in Sources */,
 				96B1B9AF2A21A16A00EFD17D /* ContentView.swift in Sources */,

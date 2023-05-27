@@ -13,7 +13,9 @@ struct ContentView: View {
     @State var txtRightTF: String = ""
     @State var leftCurrency: Currency = .silverPiece
     @State var rightCurrency: Currency = .goldPiece
-    
+    @State var showCurrencySelector: Bool = false
+    @State var showInfoSelector: Bool = false
+
     var body: some View {
         ZStack {
             // Background Image
@@ -47,6 +49,12 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(.bottom, -5)
+                        .onTapGesture {
+                            showCurrencySelector.toggle()
+                        }.sheet(isPresented: $showCurrencySelector) {
+                            SelectCurrency(leftCurrency: .constant(leftCurrency), rightCurrency: .constant(rightCurrency))
+                        }
+                        
                         //TExtField
                         TextField("Amount", text: $txtLeftTF)
                             .padding(7)
@@ -76,6 +84,11 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(.bottom, -5)
+                        .onTapGesture {
+                            showCurrencySelector.toggle()
+                        }.sheet(isPresented: $showCurrencySelector) {
+                            SelectCurrency(leftCurrency: .constant(leftCurrency), rightCurrency: .constant(rightCurrency))
+                        }
                         
                         //TExtField
                         TextField("Amount", text: $txtRightTF)
@@ -95,13 +108,17 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Show this")
+                        print("Show info button")
+                        showInfoSelector.toggle()
                     } label: {
                         Image(systemName: "info.circle.fill")
                     }
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .padding(.trailing)
+                    .sheet(isPresented: $showInfoSelector) {
+                        ExchangeInfo()
+                    }
                 }
             }
             .padding(10)
