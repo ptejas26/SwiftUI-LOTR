@@ -26,6 +26,9 @@ struct CurrencyGridView: View {
                         .shadow(color: .black, radius: 9)
                 } else {
                     CurrencyIcon(currencyImage: allCurrencyImage[index].rawValue, currencyText: allCurrencyName[index].rawValue)
+                        .onTapGesture {
+                            currency = Currency.allCases[index]
+                        }
                 }
             }
         }

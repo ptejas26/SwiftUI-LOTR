@@ -27,15 +27,15 @@ struct SelectCurrency: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 // Currency Icon
-                CurrencyGridView(currency: .constant(leftCurrency))
+                CurrencyGridView(currency: $leftCurrency)
                 
                 // Text
                 Text("Select the currency you would like to convert to:")
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 // Currency Icon
-                CurrencyGridView(currency: .constant(rightCurrency))
-                
+                CurrencyGridView(currency: $rightCurrency)
+
                 // Done button
                 Button {
                     print("dismissing this view")

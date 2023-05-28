@@ -15,6 +15,10 @@ struct ContentView: View {
     @State var rightCurrency: Currency = .goldPiece
     @State var showCurrencySelector: Bool = false
     @State var showInfoSelector: Bool = false
+    @State var leftAmountTemp: String = ""
+    @State var rightAmountTemp: String = ""
+    @State var leftTyping = false
+    @State var rightTyping = false
 
     var body: some View {
         ZStack {
@@ -52,14 +56,25 @@ struct ContentView: View {
                         .onTapGesture {
                             showCurrencySelector.toggle()
                         }.sheet(isPresented: $showCurrencySelector) {
-                            SelectCurrency(leftCurrency: .constant(leftCurrency), rightCurrency: .constant(rightCurrency))
+                            SelectCurrency(leftCurrency: $leftCurrency, rightCurrency: $rightCurrency)
                         }
                         
                         //TExtField
-                        TextField("Amount", text: $txtLeftTF)
+                        TextField("Amount", text: $txtLeftTF, onEditingChanged: { typing in
+                            leftTyping = typing
+                            leftAmountTemp = txtLeftTF
+                        })
                             .padding(7)
                             .background(Color(.systemGray6))
                             .cornerRadius(7)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: leftTyping ? txtLeftTF : leftAmountTemp) { newValue in
+                                
+                                txtRightTF = leftCurrency.convert(amountString: txtLeftTF, to: rightCurrency)
+                            }
+                            .onChange(of: leftCurrency) { _ in
+                                txtLeftTF = rightCurrency.convert(amountString: txtRightTF, to: leftCurrency)
+                            }
                         
                     }
                     
@@ -87,15 +102,25 @@ struct ContentView: View {
                         .onTapGesture {
                             showCurrencySelector.toggle()
                         }.sheet(isPresented: $showCurrencySelector) {
-                            SelectCurrency(leftCurrency: .constant(leftCurrency), rightCurrency: .constant(rightCurrency))
+                            SelectCurrency(leftCurrency: $leftCurrency, rightCurrency: $rightCurrency)
                         }
                         
                         //TExtField
-                        TextField("Amount", text: $txtRightTF)
+                        TextField("Amount", text: $txtRightTF, onEditingChanged: { typing in
+                            rightTyping = typing
+                            rightAmountTemp = txtRightTF
+                        })
                             .padding(7)
                             .background(Color(.systemGray6))
                             .cornerRadius(7)
                             .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
+                            .onChange(of: rightTyping ? txtRightTF : rightAmountTemp) { newValue in
+                                txtLeftTF = rightCurrency.convert(amountString: txtRightTF, to: leftCurrency)
+                            }
+                            .onChange(of: rightCurrency) { _ in
+                                txtRightTF = leftCurrency.convert(amountString: txtLeftTF, to: rightCurrency)
+                            }
                     }
                 }
                 .padding()
